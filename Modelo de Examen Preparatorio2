@@ -1,0 +1,34 @@
+Ejercicio 1. 
+
+public int cantidadDePromociones(int alfajoresChocolate, int alfajoresDulceDeLeche,int alfajoresFruta){
+	
+	alfajoresChocolate = (alfajoresChocolate - (alfajoresChocolate % 4)) / 4; 
+	return minimoDe(alfajoresChocolate, alfajoresDulceDeLeche, aldajoresFruta); 
+
+	
+} 
+
+public int minimoDe(int a, int b, int c){
+
+	if (a < b){
+		if (a > c){
+			return c;
+		}
+		else{
+			return a;
+		} 
+	} 
+	else{
+		if (b > c){
+			return b;
+		}
+		else{
+			return c;
+		}
+	}	
+} 
+
+Ejercicio 2. 
+
+B. Error de compilación del código: "Missing return statement". En el caso de que el parámetro alfajor sea distinto a "chocolate" o 
+"dulce de leche" y cantidad menor a 24, no returnará ningun valor.

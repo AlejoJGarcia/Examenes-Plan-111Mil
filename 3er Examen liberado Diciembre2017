@@ -1,0 +1,119 @@
+															//Modelo de Examen preparatorio 3 
+
+Ejercicio 1 - Implementar desde el diagrama de clases.
+
+a) 
+	public class Reserva{
+		
+		//Definicion de variables de clase.
+		private Date fechaReserva; 
+		private Equipo equipo1, equipo2; 
+		
+		//Definición de constructor.
+		public Reserva (Date fechaReserva, Equipo equipo1, Equipo equipo2){
+			this.fechaReserva = fechaReserva; 
+			this.equipo1 = equipo1; 
+			this.equipo2 = equipo2;
+		}
+
+		//Definición de getters y setters. 
+
+		public Date getFechaReserva(){
+			return this.fechaReserva; 
+		}
+
+		public void setFechaReserva(Date fechaReserva){
+			this.fechaReserva = fechaReserva;
+		}
+
+		public Equipo getEquipo1(){
+			return this.equipo1;
+		}
+
+		public void setEquipo1(Equipo equipo1){
+			this.equipo1 = equipo1;
+		}
+
+		public Equipo getEquipo2(){
+			return this.equipo2;
+		}
+
+		public void setEquipo1(Equipo equipo2){
+			this.equipo2 = equipo2;
+		}
+
+	} 
+
+
+b) 
+	public class Equipo{
+			
+		private String nombre; 
+		private List<String> jugadores;
+		private int maxJugadores;
+
+		//Definición de constructor. 
+
+		public Equipo(String nombre, int maxJugadores){
+			this.jugadores = new ArrayList<String>(); 
+			this.nombre = nombre 
+			this.maxJugadores = maxJugadores;
+		} 
+
+		//Definición de getters y setters.
+
+		public String getNombre(){
+			return this.nombre; 
+		}
+
+		public void setNombre(String nombre){
+			this.nombre = nombre;
+		}
+
+		public void addJugador(String jugador){
+			this.jugadores.add(jugador);	
+		}
+
+		public List<String> getJugadores(){
+			return this.jugadores;
+		}
+
+		public int getMaxJugadores(){
+			return this.maxJugadores;
+		}
+
+		public void setMaxJugadores(int maxJugadores){
+			this.maxJugadores = maxJugadores;
+		}  
+
+	} 
+
+Ejercicio 2 - Implementar un método a partir de un enunciado. 
+
+	
+	public void agregarJugador(String jugador){
+		if( admiteJugador()) addJugador(jugador);
+	}
+
+
+	//Método de clase Equipo.
+	public boolean admiteJugador(){ 
+		if(this.jugadores.size() < this.maxJugadores){
+			retun true;
+		} 
+		else return false;
+	} 
+
+Ejercicio 3 - Extender la funcionalidad de un método a partir de un enunciado. 
+
+	private boolean hayJugadoresRepetidos(Equipo e1, Equipo e2){
+
+		for(String jugador1: e1.getJugador()){
+			for(String jugador2: e2.getJugador()){
+				if (jugador1.getNombre().equalsIgnoreCase(jugador2.getNombre())){
+					return false;
+				}
+			}
+		}
+		return true;
+	}

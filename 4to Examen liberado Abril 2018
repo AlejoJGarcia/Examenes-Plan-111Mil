@@ -1,0 +1,84 @@
+Ejercicio 1 - Implementar el diagrama de clases. 
+
+a)
+	public class Bicicleteria{
+		private List<String> bicicletas; 
+		private float ganancias; 
+		private int cantidadDeVentas;   
+	} 
+
+b)
+	public void addBicicleta(Bicicleta bicicleta){
+		this.bicicletas.add(bicileta);
+	}
+
+c) 
+	public float getPrecio(){
+		return this.precio;
+	} 
+
+	public void setPrecio(float precio){
+		this.precio = precio;
+	} 
+
+
+Ejercicio 2 - Implementar un método a partir de un enunciado. 
+
+//Método de busqueda secuencial implementado con foreach.
+	
+	public Bicicleta buscarBicicleta(String nroDeSerie){
+	
+		for(Bicicleta buscada:bicicletas){
+			if(buscada.getNroDeSerie().equals(nroDeSerie)){
+				return buscada;
+			}
+		}
+	
+	return null;
+	} 
+
+//Método de buscada secuencial implementado con iterador y for. 
+
+	public Bicicleta buscarBicicleta(String nroDeSerie){
+
+		for(Iterator<Bicicleta> iterador = bicicletas.iterator(); iterador.hasNext();){
+			Bicicleta buscada = iterador.Next(); 
+
+			if(buscada.getNroDeSerie().equals(nroDeSerie)){
+				return buscada; 
+			}
+		}
+		
+		return null;
+	} 
+
+//Método de busqueda secuencial implementado con iterador y while. 
+
+	public Bicicleta buscarBicicleta(String nroDeSerie){ 
+		Iterator<Bicicleta> iterador = bicicletas.iterator(); 
+
+		while(iterador.hasNext()){
+			Bicicleta buscada = iterador.Next(); 
+
+			if(buscada.getNroDeSerie().equals(nroDeSerie)){
+				return buscada;
+			}
+
+		}
+
+		return null;
+	} 
+
+Ejercicio 3 - Interpretación de código.  
+	
+	public float xxxx(){
+		float ret = 0; 
+		for (int i = 0; i < bicicletas.size(); i++){
+			ret = ret + bicicletas.get(i).getPrecio(); 
+
+		}
+		return ret; 
+	}
+
+La respuesta correcta es la B. Calcula el precio total de las bicicletas de la bicicletería. 
+ 

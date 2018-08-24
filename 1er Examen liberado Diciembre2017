@@ -1,0 +1,175 @@
+Ejercicio 1 - Implementar desde el diagrama de clases.
+
+6)
+	public class Cliente{
+	
+	//Definición de variables de clase. 
+		private String nombre; 
+		private int dni; 
+		private List<Orden> ordenes; 
+
+	//Definición de constructor. 
+		public Cliente(String nombre, int dni){
+			this.nombre = nombre; 
+			this.dni = dni; 
+			ordenes = new ArrayList<>();
+		}
+
+	//Definición de métodos.
+		public void addOrden(Orden o){
+			ordenes.add(o); 
+		}
+
+	//Definición de getters y setters.
+		public String getNombre(){
+			return nombre;
+		}
+
+		public void setNombre(String nombre){
+			this.nombre = nombre;
+		}
+
+		public int getDni(){
+			return dni; 
+		}
+
+		public void setDni(int dni){
+			this.dni = dni; 
+		}
+
+		public List<Orden> getOrdenes(){
+			return ordenes;
+		}
+
+		public void setOrdenes(List<Orden> ordenes){
+			this.ordenes = ordenes;
+		}
+
+	}
+
+
+7)
+
+	public class Orden{
+
+	//Definición de variables de clase. 
+		private List<DetalleOrden> items; 
+		private int id; 
+		private Date creacion; 
+		private Date envio; 
+
+	//Definición de constructor. 
+		public Orden(int id, Date creacion){ 
+			this.id = id; 
+			this.creacion = creacion; 
+			items = new ArrayList<>(); 
+		} 
+
+		//Definición de métodos.
+		public void agregarItem(DetalleOrden detalle){
+			items.add(detalle);
+		}
+
+		public int getNroItems(){
+			return items.size();
+		} 
+
+		//Definición de getters y setters. 
+
+		public List<DetalleOrden> getItems(){
+			return items;
+		}
+
+		public void setItems(List<DetalleOrden> items){
+			this.items = items;
+		}
+
+		public int getId(){
+			return id; 
+		}
+
+		public void setId(int id){
+			this.id = id;
+		}
+
+		public Date getCreacion(){
+			return creacion;
+		}
+
+		public void setCreacion(Date creacion){
+			this.creacion = creacion;
+		}
+
+		public Date getEnvio(){
+			return envio;
+		}
+
+		public void setEnvio(Date envio){
+			this.envio = envio;
+		}
+
+	}
+
+8)
+
+	public class DetalleOrden{ 
+
+		//Definición de variables de clase. 
+		private Notebook item; 
+		private float precioUnitario; 
+		private int cantidad; 
+
+		//Definición de constructor.
+
+		public DetalleOrden(Notebook item, float precioUnitario, int cantidad){
+			this.item = item; 
+			this.precioUnitario = precioUnitario; 
+			this.cantidad = cantidad; 
+		}
+
+		//Definición de getters y setters. 
+
+		public float getPrecioUnitario(){ 
+			return this.precioUnitario;
+		}
+
+		public void setPrecioUnitario(float precioUnitario){
+			this.precioUnitario = precioUnitario;
+		}
+
+		public int getCantidad(){
+			return this.cantidad;
+		} 
+
+		public void setCantidad(){
+			this.cantidad = cantidad; 
+		}
+
+		public Notebook getItem(){ 
+			return this.item;
+		}
+
+		public void setItem(Notebook item){
+			this.item = item;
+		}
+	}
+
+Ejercicio 2 - Implementar un método a partir de un enunciado. 
+
+	public float calcularTotalOrden(){ 
+		float precioTotal = 0.0; 
+		
+		for(DetalleOrden detalle: items){
+			precioTotal = precioTotal + (detalle.getPrecioUnitario() * detalle.getCantidad()); 
+		} 
+		return precioTotal;
+	} 
+
+Ejercicio 3 - Interpretación de código. 
+
+La opción correcta es la opción D "ordenarOrdenesPorCantidadDeItems()". El método ordena los elementos de la lista ordenes teniendo en cuenta el número de items de cada uno. 
+Los elementos son ordenados de menor a mayor.  
+
+
+
+

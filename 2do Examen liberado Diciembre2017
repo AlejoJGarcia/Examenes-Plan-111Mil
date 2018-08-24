@@ -1,0 +1,255 @@
+															
+Ejercicio 1 - Implementar desde el diagrama de clases. 
+
+a) 
+	public class Curso{
+
+	//Definición de variables de clase.	
+		private String nombreCurso; 
+		private int cupo; 
+		private float notaAprobacion; 
+		private List<Inscripcion> inscripciones;
+
+	//Definición de constructor. 
+		public Curso(float notaAprobacion, int cupo){
+			this.cupo = cupo; 
+			this.notaAprobacion = notaAprobacion; 
+			this.inscripciones = new ArrayList<Inscripcion>(); 
+		}
+
+	//Definición de getters y setters. 
+		public String getNombreCurso(){
+			return this.nombreCurso;
+		}
+
+		public void setNombreCurs(String nombreCurso){
+			this.nombreCurso = nombreCurso;
+		}
+
+	}
+
+b) 
+	public class Alumno{
+		
+	//Definición de variables de clase.
+		private int dni; 
+		private String nombre; 
+		private String apellido; 
+		private int edad; 
+
+	//Definición de constructor. 
+		public Alumno(int dni, String nombre, String apellido, int edad){ 
+			this.dni = dni; 
+			this.nombre = nombre; 
+			this.apellido = apellido; 
+			this.edad = edad;
+		}
+
+	}
+
+c) 
+	public class Inscripcion{
+
+	//Definición de variables de clase. 
+		private Alumno alumno; 
+		private Curso curso; 
+		private float nota; 
+
+	//Definición de constructor. 
+		public Inscripcion(Alumno alumno, Curso curso, float nota){
+			this.alumno = alumno; 
+			this.curso = curso; 
+			this.nota = nota; 
+		}
+
+	//Definición de getters y setters. 
+		public void setAlumno(Alumno alumno){
+			this.alumno = alumno;
+		}
+
+		public void setCurso(Curso curso){
+			this.curso = curso; 
+		}
+
+		public void setNota(float nota){
+			this.nota = nota; 
+		}
+
+		public float getNota(){ 
+			return this.nota;
+		}
+
+	}
+
+d) 
+	public class Colegio{
+
+	//Definición de variables de clase. 
+		private List<Curso> cursos; 
+
+	//Definición de constructor. 
+		public Colegio(List<Curso> cursos){
+			this.cursos = new ArrayList<Curso>();
+		}	
+
+	}
+
+
+Ejercicio 2 - Implementar un método a partir de un enunciado. 
+
+A) 
+public int cantidadInscriptos(String nombre){
+	int cantidad = 0; 
+
+	for (Curso c: cursos){
+		if(i.getNombreCurso.equalsIgnoreCase(nombre)){
+			cantidad = c.getInscripciones().size();
+			break;
+		}
+	}
+	return cantidad;
+} 
+
+B) 
+public int cantidadAprobados(String nombre){
+	int aprobados = 0; 
+
+	for(Curso c:cursos){
+		if(c.getNombreCurso().equalsIgnoreCase(nombre)){
+			for(Inscripcion a:inscripciones){
+				if(a.getNota >= i.getNotaAprobacion){
+					aprobados++; 
+				}
+			}
+		break;
+		}
+	}
+	return aprobados;
+}
+
+Ejercicio 3 - Interpretación de código. 
+
+Método público que devuelve un flotante y toma como parámetro un elemento de tipo Curso.
+public float xxx(Curso c){
+
+float yyy = 0; 
+
+	La interface Iterator itera sobre elementos de tipo Curso sobre la lista cursos. 
+	iterador es de tipo Iterator que "contiene" elementos de tipo Curso.
+	cursos.iterator() llama al método iterator sobre la lista cursos. 
+	iterador.hasNext() es un método que devuelve si la iteración tiene mas elementos.
+	iterador.Next() devuelve el siguiente elemento de la colección.
+
+	for(Iterator<Curso> iterador = cursos.iterator(); iterador.hasNext();){
+		
+		Asigno a una variable curso de tipo Curso lo que obtengo de iterador.Next() (le asigno una instancia de curso).
+		Curso curso = iterador.Next();
+		if (curso.getNombreCurso().equals(c.getNombreCurso())){
+			List<Inscripcion> inscriptos = curso.getInscriptos(); 
+			for(Iterator<Inscripcion> iter = inscriptos.iterator(); itrer.hasNext();){
+				Inscripcion inscripcion = iter.Next(); 
+				if (inscripcion.getNota() >= curso.getNotaAprobacion())
+					yyy++;
+				
+			}
+			break;
+		}
+		
+	}
+		
+	if (c.getInscripciones().size > 0)
+		return (yyy/c.getinscripciones().size())*100; 
+	else return 0;
+		
+	
+
+La diferencia entre el for each y trabajar con el iterador es que, por ejemplo, con el iterador podríamos ir eliminando elementos de la lista. For each no lo permite.
+
+}  
+
+El método xxx devuelve el porcentaje de aprobados de un curso.
+
+
+Ejercicio 4 - Implementación de métodos a partir del siguiente caso. 
+
+A)
+	public int alumnosEntre (int edadMinima,edadMaxima){
+		int total = 0; 
+
+		for (Iterator<Curso> c = cursos.iterator(); c.hasNext();){
+			Curso curso = c.next(); 
+			if((curso.getInscripciones().size()) != 0){
+				for (Iterator<Inscripcion> i = inscripciones.iterator(); i.hasNext();){
+					Inscripcion inscripcion = i.next();  
+					if ((inscripcion.getAlumno().getEdad() >= edadMinima) && (inscripcion.getAlumno().getEdad() <= edadMaxima)){
+						total++;
+					}
+				}
+			}
+		}
+		return total;
+	}
+
+B)  
+	public int totalAlumnos (){
+	int total = 0;
+	
+		for (Iterator<Curso> c = cursos.iterator(); c.hasNext();){
+			Curso curso = c.next(); 
+			total += curso.getInscripciones.size();
+		}	
+		return total;
+	}  
+
+	public porcentajeEntre (int edadMinima,edadMaxima){
+	int porcentaje = 0;
+			
+			porcentaje = (alumnosEntre(edadMinima,edadMaxima) * 100) / totalAlumnos(); 
+			return porcentaje;
+	} 
+
+C) No resuelto.
+
+
+Ejercicio 5 - Implementación de métodos a partir del siguiente caso. 
+
+A) 
+	
+	public float obtenerPromedioGeneral(Curso curso){
+	float totalNotas = 0; 
+	float promedio = 0; 
+
+		for (Inscripcion i:inscripciones){
+			totalNotas += i.getNota();
+		}
+			 
+		promedio = totalNotas / inscripciones.size(); 
+		return promedio;  
+	}
+
+B) 
+	public float obtenerMayorNota(Curso curso){
+	float mayorNota = 0; 
+
+		for (Inscripcion i:inscripciones){ 
+			if (i.getNota() > mayorNota){
+				mayorNota = i.getNota(); 
+			}
+		}
+						 
+		return mayorNota;  
+	} 
+
+C) 
+	public float obtenerMenorNota(Curso curso){
+	float menorNota; 
+
+		menorNota = inscripciones.get(0).getNota();
+		for (Inscripcion i:inscripciones){ 
+			if (i.getNota() < menorNota){
+				menorNota = i.getNota(); 
+			}
+		}
+			 
+		return menorNota;  
+	}

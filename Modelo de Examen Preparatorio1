@@ -1,0 +1,44 @@
+															
+
+Ejercicio 1.
+
+public int promocionLocal(Provincia provincia, int saltenias, int tucumanas){
+	int cantidadCajas = 0; 
+	switch(procvincia){
+	case SALTA: 
+		cantidadCajas = calcularCantidad(saltenias,tucumanas,4,2);
+		break;
+	case TUCUMAN: 
+		cantidadCajas = calcularCantidad(saltenias,tucumanas,2,4);
+		break;
+	default: 
+		cantidadCajas = calcularCantidad(saltenias,tucumanas,3,3);
+		break;
+	}
+	return cantidadCajas;
+}
+
+private int calcularCajas(int saltenias, int tucumanas, int a, int b){
+	int cantidad; 
+	saltenias = (saltenias - (saltenias % a) / a; 
+	tucumanas = (tucumanas - (tucumanas % b) / b);
+	cantidad = Math.min(saltenias,tucumanas); 
+	return cantidad;
+}
+
+Ejercicio 2. 
+
+public class CocinaRegional{
+
+private String[] empanadas = {"carne suave", "carne picante", "pollo", "humita"}; 
+
+public double calcularPrecioSegunCantidad(String empanada, int cantidad, double precio){
+	if (empanada == empanadas[0] || empanada == empanadas [1] && cantidad < 24){
+	return precio * 2; 
+	} else if (cantidad  >= 24){
+		return precio * 1.1;
+	}
+}
+}
+
+B. Error de compilación del código: "Missing return statement". Falta el return al final del código (si o si tiene que devolver un double).

@@ -1,0 +1,58 @@
+Ejercicio 1 - Implementar desde el diagrama de clases.  
+
+a) 
+	public class PaqueteProyectores{
+		private int codPaqueteDeProyectores; 
+		private float costoEnvio; 
+		private boolean enTransito;
+	} 
+
+b) 
+	public boolean getEnTransito(){
+		return this.enTransito;
+	} 
+
+	public void setEnTransito(boolean enTransito){
+		this.enTransito = enTransito;
+	} 
+
+	public int getCodPaquete(){
+		return this.codPaqueteDeProyectores; 
+	} 
+
+	public void setCodPaquete(int codPaqueteDeProyectores){
+		this.codPaqueteDeProyectores = codPaqueteDeProyectores;
+	} 
+
+c) 
+	public void agregarPaquete(PaqueteProyectores paqueteNuevo){
+		this.paquetes.add(paqueteNuevo); 
+	} 
+
+Ejercicio 2 - Implementar un método a partir de un enunciado. 
+
+public PaqueteProyectores buscarPaqueteDeProyectores(int codPaq){
+	
+	for(PaqueteProyectores paq:paquetes){
+		if(paq.getCodPaquete().equals(codPaq)){
+			return paq;
+		}
+	}
+
+	return null;
+} 
+
+Ejercicio 3 -  Interpretación de código. 
+
+	public int xxxx(){
+		int cant = 0;
+		for (PaqueteProyectores paq:paquetes){
+			if(paq.getEnTransito()){
+			cant = cant + 1;
+			}
+		}
+		
+		return cant;
+	} 
+
+La respues correcta es la B. Calcula la cantidad de paquetes de proyectores en tránsito.
