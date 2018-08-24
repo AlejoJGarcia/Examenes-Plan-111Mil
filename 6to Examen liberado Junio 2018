@@ -1,0 +1,42 @@
+Ejercicio 1 - Implementar desde el diagrama de clases. 
+
+A) 
+	public class ItemStock{
+		private Computadora computadora; 
+		private int cantidad; 
+	} 
+
+	public class Computadora{
+		private String nombre;
+	} 
+
+B) 
+	public List<ItemStock> getItems(){
+		return this.items;
+	} 
+
+C) 
+	public void setItems(List<ItemStock> newItems){
+		this.items = newItems;
+	}  
+
+Ejercicio 2 - Implementar un método a partir de un enunciado. 
+
+	public List<ItemStock> consultarItemsFaltantes(int cantidadMaxima){
+
+		List<ItemStock> nuevaLista = new ArrayList<ItemStock>; 
+		
+		for (ItemStock elemento: items){
+			if(elemento.getCantidad() < cantidadMaxima){
+				nuevaLista.add(elemento);
+			}
+		}	
+		
+		return nuevaLista;
+	} 
+
+Ejercicio 3 - Identificar error en el código. 
+
+La respuesta correcta es la número 3. La comparación entre el precio de cada ítem y el de la variable
+“masCostosa” debería ser mayor estricto ( > ) o mayor o igual ( >= ).
+

@@ -1,0 +1,58 @@
+Ejercicio 1 - Implementación desde el diagrama de clases.  
+
+A) 
+	public class Album{
+		private List<Foto> fotos; 
+		private String nombre; 
+		private int cantidadMaxima; 
+	} 
+
+B) 
+	public void addFoto(Foto foto){
+		fotos.add(foto);
+	} 
+
+C) 
+	public Foto getFoto(int posicion){
+		fotos.get(posicion);
+	} 
+
+Ejercicio 2 - Implementar un método a partir de un enunciado. 
+	
+	public boolean tieneFotoConTamanioMenor(int umbral){
+
+		for(Foto elemento: fotos){
+			if(elemento.getTamanio() < umbral){
+				return true;
+			}
+		}
+		
+		return false;
+	} 
+
+Ejercicio 3 - Determine la opcion correcta. 
+ 
+	public List<Foto> nuevaFuncionalidad(int umbral){
+		List<Foto> r = new ArrayList<Foto>(); 
+
+		for (Foto fotoActual:this.fotos){
+			if (fotoActual.getTamanio() <= umbral){
+				int posInsert = 0; 
+				boolean encontrado = false; 
+
+				while (posInsert < r.size() && !encontrado){
+					Foto fotoListaRetorno = r.get(posInsert); 
+					if (fotoActual.getTamanio() > fotoListaRetorno.getTamanio()){
+						encontrado = true;
+					} 
+					else{
+						posInsert = posInsert + 1;
+					}
+				} 
+				r.add(posInsert, fotoActual);
+			}
+			
+		return r;
+		}
+
+	}
