@@ -31,4 +31,8 @@ public int minimoDe(int a, int b, int c){
 Ejercicio 2. 
 
 B. Error de compilación del código: "Missing return statement". En el caso de que el parámetro alfajor sea distinto a "chocolate" o 
-"dulce de leche" y cantidad menor a 24, no returnará ningun valor.
+"dulce de leche" y cantidad menor a 24, no returnará ningun valor. 
+
+Ejercicio 3. 
+
+El error está en la línea 11 del archivo Alfajor.java. Intenta concatenar una instancia de Date con otras cadenas.

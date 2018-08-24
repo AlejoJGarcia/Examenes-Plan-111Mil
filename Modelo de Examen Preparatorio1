@@ -41,4 +41,15 @@ public double calcularPrecioSegunCantidad(String empanada, int cantidad, double 
 }
 }
 
-B. Error de compilación del código: "Missing return statement". Falta el return al final del código (si o si tiene que devolver un double).
+B. Error de compilación del código: "Missing return statement". Falta el return al final del código (si o si tiene que devolver un double). 
+
+Ejercicio 3. 
+
+El error está en la línea 4 del archivo Archivo EmpanadaPicante.Java. Al llamar al cosntructor de la clase superior pasa los parámetros al revés. 
+
+Ejercicio 4. 
+
+A) Falso. Al ser privado el atributo de la clase SalteñaCarne, la clase EmpanadaCarne no podrá verlos y deberá usar los métodos get. 
+B) Falso. No importa que los atributos se hereden, si está definido como privado no podrá acceder.
+C) Falso. Usando super() solamente podrá acceder al constructor de su clase padre INMEDIATA, es decir, EmpanadaJujeña. 
+D) Verdadero.

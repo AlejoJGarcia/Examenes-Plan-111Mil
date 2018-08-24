@@ -39,4 +39,5 @@ Ejercicio 3 - Identificar error en el código.
 
 La respuesta correcta es la número 3. La comparación entre el precio de cada ítem y el de la variable
 “masCostosa” debería ser mayor estricto ( > ) o mayor o igual ( >= ).
+Además el return debe estar fuera del ciclo for.
 
